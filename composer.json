@@ -1,0 +1,10 @@
+{
+    "name": "dangthanhtu/shop-thoi-trang",
+    "description": "Xây dựng website bán hàng - Thầy Lợi dạy",
+    "autoload": {
+        "psr-4": {
+            "Src\\": "application/"
+        }
+    },
+    "require": {}
+}
