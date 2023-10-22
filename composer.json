@@ -1,10 +1,23 @@
 {
     "name": "dangthanhtu/shop-thoi-trang",
-    "description": "Xây dựng website bán hàng - Thầy Lợi dạy",
+    "description": "Xây dựng website bán hàng - Năm học 2023-2024",
+    "authors": [
+        {
+            "name": "Đặng Thanh Tú",
+            "email": "dtu.22034@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "Src\\": "application/"
-        }
+            "App\\":"app/"
+        },
+        "files": [
+            "./app/Route.php",
+            "./config/database.php"
+        ]
     },
-    "require": {}
+    "require": {
+        "illuminate/database": "^10.26",
+        "illuminate/events": "^10.26"
+    }      
 }
