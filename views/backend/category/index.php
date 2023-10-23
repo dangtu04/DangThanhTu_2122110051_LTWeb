@@ -11,8 +11,9 @@ $list = Category::where('status', '!=', 0)
 }
 ?>
 <?php require_once "../views/backend/header.php"; ?>
-      <!-- CONTENT -->
-      <div class="content-wrapper">
+     <form action="index.php?option=category&cat=process" method="post" enctype="multipart/form-data">
+       <!-- CONTENT -->
+       <div class="content-wrapper">
          <section class="content-header">
             <div class="container-fluid">
                <div class="row mb-2">
@@ -130,4 +131,5 @@ $list = Category::where('status', '!=', 0)
          </section>
       </div>
       <!-- END CONTENT-->
+     </form>
 <?php require_once "../views/backend/footer.php"; ?>
