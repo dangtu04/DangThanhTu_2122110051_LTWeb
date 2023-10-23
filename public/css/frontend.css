@@ -4,6 +4,7 @@
     --bg-main:#ff0099; */
     --primary-color:#32b0ac;
 }
+
 .bg-main
 {
     background-color:var(--primary-color);
