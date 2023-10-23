@@ -32,6 +32,7 @@ $list = Product::where('status', '!=', 0)
                            <i class="fa fa-trash"></i> Thùng rác</a>
                   </div>
                   <div class="card-body">
+                  <?php require_once "../views/backend/message.php"; ?>              
                      <table class="table table-bordered" id="mytable">
                         <thead>
                            <tr>
@@ -53,7 +54,7 @@ $list = Product::where('status', '!=', 0)
                                  </td>
                                  <td>
                                  <img src="../public/images/product/<?= $item->image; ?>" 
-                                       alt="<?= $item->image; ?>">
+                                       alt="<?= $item->image; ?>" style="width: 100px;">
                                  </td>
                                  <td>
                                     <div class="name">

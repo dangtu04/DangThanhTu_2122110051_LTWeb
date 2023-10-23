@@ -6,7 +6,7 @@ $mod_mainmenu = Menu::where([['parent_id', '=' , 0],['position', '=' , 'mainmenu
 ?>
 <nav class="navbar navbar-expand-lg bg-main">
    <div class="container-fluid">
-      <a class="navbar-brand d-block d-sm-none text-white" href="index.html">DIENLOISHOP</a>
+      <a class="navbar-brand d-block d-sm-none text-white" href="index.html">DTus Shop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
          aria-expanded="false" aria-label="Toggle navigation">
