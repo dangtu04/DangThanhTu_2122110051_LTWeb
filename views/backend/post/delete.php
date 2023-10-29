@@ -4,8 +4,7 @@ use App\Models\Post;
 
 $id = $_REQUEST['id'];
 $post = Post::find($id);
-if ($post == null)
-{
+if ($post == null) {
     header("location:index.php?option=post");
 }
 $post->status = 0;

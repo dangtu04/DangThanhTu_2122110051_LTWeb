@@ -1,13 +1,13 @@
 <?php 
-use App\Models\Brand;
+use App\Models\User;
 use App\Libraries\MyClass;
 
 $id = $_REQUEST['id'];
-$brand = Brand::find($id);
-if ($brand == null)
+$user = User::find($id);
+if ($user == null)
 {
    MyClass::set_flash('message',['msg' =>'Lỗi trang 404', 'type' => 'danger']);
-    header("location:index.php?option=brand");
+    header("location:index.php?option=user");
 }
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -28,7 +28,7 @@ if ($brand == null)
                <div class="card-header">
                   <div class="row">
                      <div class="col-md-12 text-right">
-                     <a href="index.php?option=brand" class="btn btn-sm btn-info">
+                     <a href="index.php?option=user" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
                      </a>
@@ -48,49 +48,68 @@ if ($brand == null)
                            <tbody>
                               <tr>
                                  <td>ID</td>
-                                 <td><?= $brand->id; ?></td>
+                                 <td><?= $user->id; ?></td>
                               </tr>
                               <tr>
-                                 <td>Tên loại sản phẩm</td>
-                                 <td><?= $brand->name; ?></td>
+                                 <td>Họ và tên</td>
+                                 <td><?= $user->name; ?></td>
                               </tr>
                               <tr>
-                                 <td>Slug</td>
-                                 <td><?= $brand->slug; ?></td>
+                                 <td>Tên đăng nhập</td>
+                                 <td><?= $user->username; ?></td>
                               </tr>
+                              <tr>
+                                 <td>Mật khẩu</td>
+                                 <td><?= $user->pasword; ?></td>
+                              </tr>
+                              <tr>
+                                 <td>Email</td>
+                                 <td><?= $user->email; ?></td>
+                              </tr>
+                              <tr>
+                                 <td>Giới tính</td>
+                                 <td><?= $user->gender; ?></td>
+                              </tr>
+                              <tr>
+                                 <td>Điện thoại</td>
+                                 <td><?= $user->phone; ?></td>
+                              </tr>
+
                               <tr>
                                  <td>Hình ảnh</td>
-                                 <td><img style="width :100px;" src="../public/images/brand/<?= $brand->image; ?>" 
-                                       alt="<?= $brand->image; ?>"></td>
+                                 <td><img style="width :100px;" src="../public/images/user/<?= $user->image; ?>" 
+                                       alt="<?= $user->image; ?>"></td>
                               </tr>
                               <tr>
-                                 <td>Thứ tự</td>
-                                 <td><?= $brand->sort_order; ?></td>
+                                 <td>Quyền truy cập</td>
+                                 <td><?= $user->roles; ?></td>
                               </tr>
                               <tr>
-                                 <td>Mô tả</td>
-                                 <td><?= $brand->description; ?></td>
+                                 <td>Địa chỉ</td>
+                                 <td><?= $user->address; ?></td>
                               </tr>
                               <tr>
                                  <td>Ngày tạo</td>
-                                 <td><?= $brand->created_at; ?></td>
+                                 <td><?= $user->created_at; ?></td>
                               </tr>
                               <tr>
                                  <td>Người tạo</td>
-                                 <td><?= $brand->created_by; ?></td>
+                                 <td><?= $user->created_by; ?></td>
                               </tr>
                               <tr>
                                  <td>Ngày sửa</td>
-                                 <td><?= $brand->updated_at; ?></td>
+                                 <td><?= $user->updated_at; ?></td>
                               </tr>
                               <tr>
-                                 <td>Người sửa</td>
-                                 <td><?= $brand->updated_by; ?></td>
+                                 <td>Người sửa </td>
+                                 <td><?= $user->updated_by; ?></td>
                               </tr>
                               <tr>
                                  <td>Trạng thái</td>
-                                 <td><?= $brand->status; ?></td>
+                                 <td><?= $user->status; ?></td>
                               </tr>
+                              
+                           
                            </tbody>
                         </table>
                      </div>

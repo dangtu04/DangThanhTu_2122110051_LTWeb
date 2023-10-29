@@ -17,7 +17,7 @@ if ($category == null)
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Chi tiết</h1>
+                     <h1 class="d-inline">Chi tiết danh mục</h1>
                   </div>
                </div>
             </div>

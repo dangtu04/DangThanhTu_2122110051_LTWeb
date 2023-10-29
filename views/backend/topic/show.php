@@ -1,13 +1,13 @@
 <?php 
-use App\Models\Brand;
+use App\Models\Topic;
 use App\Libraries\MyClass;
 
 $id = $_REQUEST['id'];
-$brand = Brand::find($id);
-if ($brand == null)
+$topic = Topic::find($id);
+if ($topic == null)
 {
    MyClass::set_flash('message',['msg' =>'Lỗi trang 404', 'type' => 'danger']);
-    header("location:index.php?option=brand");
+    header("location:index.php?option=topic");
 }
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -17,7 +17,7 @@ if ($brand == null)
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Chi tiết thương hiệu</h1>
+                     <h1 class="d-inline">Chi tiết chủ đề</h1>
                   </div>
                </div>
             </div>
@@ -28,7 +28,7 @@ if ($brand == null)
                <div class="card-header">
                   <div class="row">
                      <div class="col-md-12 text-right">
-                     <a href="index.php?option=brand" class="btn btn-sm btn-info">
+                     <a href="index.php?option=topic" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
                      </a>
@@ -47,50 +47,54 @@ if ($brand == null)
                            </thead>
                            <tbody>
                               <tr>
-                                 <td>ID</td>
-                                 <td><?= $brand->id; ?></td>
+                                 <td>Mã chủ đề</td>
+                                 <td><?= $topic->id; ?></td>
                               </tr>
                               <tr>
-                                 <td>Tên loại sản phẩm</td>
-                                 <td><?= $brand->name; ?></td>
+                                 <td>Tên chủ đề</td>
+                                 <td><?= $topic->name; ?></td>
                               </tr>
                               <tr>
-                                 <td>Slug</td>
-                                 <td><?= $brand->slug; ?></td>
+                                 <td>Tên slug</td>
+                                 <td><?= $topic->slug; ?></td>
                               </tr>
                               <tr>
-                                 <td>Hình ảnh</td>
-                                 <td><img style="width :100px;" src="../public/images/brand/<?= $brand->image; ?>" 
-                                       alt="<?= $brand->image; ?>"></td>
+                                 <td>Mã cấp cha</td>
+                                 <td><?= $topic->iparent_idd; ?></td>
                               </tr>
                               <tr>
-                                 <td>Thứ tự</td>
-                                 <td><?= $brand->sort_order; ?></td>
+                                 <td>Sắp xếp</td>
+                                 <td><?= $topic->sort_order; ?></td>
                               </tr>
                               <tr>
-                                 <td>Mô tả</td>
-                                 <td><?= $brand->description; ?></td>
+                                 <td>Từ kháo SEO</td>
+                                 <td><?= $topic->metakey; ?></td>
+                              </tr>
+                              <tr>
+                                 <td>Mô tả SEO</td>
+                                 <td><?= $topic->metadesc; ?></td>
                               </tr>
                               <tr>
                                  <td>Ngày tạo</td>
-                                 <td><?= $brand->created_at; ?></td>
+                                 <td><?= $topic->created_at; ?></td>
                               </tr>
                               <tr>
                                  <td>Người tạo</td>
-                                 <td><?= $brand->created_by; ?></td>
+                                 <td><?= $topic->created_by; ?></td>
                               </tr>
                               <tr>
                                  <td>Ngày sửa</td>
-                                 <td><?= $brand->updated_at; ?></td>
+                                 <td><?= $topic->updated_at; ?></td>
                               </tr>
                               <tr>
-                                 <td>Người sửa</td>
-                                 <td><?= $brand->updated_by; ?></td>
+                                 <td>Ngày sửa</td>
+                                 <td><?= $topic->updated_by; ?></td>
                               </tr>
                               <tr>
                                  <td>Trạng thái</td>
-                                 <td><?= $brand->status; ?></td>
+                                 <td><?= $topic->status; ?></td>
                               </tr>
+                                                            
                            </tbody>
                         </table>
                      </div>

@@ -1,13 +1,13 @@
 <?php 
-use App\Models\Brand;
+use App\Models\Banner;
 use App\Libraries\MyClass;
 
 $id = $_REQUEST['id'];
-$brand = Brand::find($id);
-if ($brand == null)
+$banner = Banner::find($id);
+if ($banner == null)
 {
    MyClass::set_flash('message',['msg' =>'Lỗi trang 404', 'type' => 'danger']);
-    header("location:index.php?option=brand");
+    header("location:index.php?option=banner");
 }
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -28,7 +28,7 @@ if ($brand == null)
                <div class="card-header">
                   <div class="row">
                      <div class="col-md-12 text-right">
-                     <a href="index.php?option=brand" class="btn btn-sm btn-info">
+                     <a href="index.php?option=banner" class="btn btn-sm btn-info">
                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                      Về danh sách
                      </a>
@@ -48,48 +48,48 @@ if ($brand == null)
                            <tbody>
                               <tr>
                                  <td>ID</td>
-                                 <td><?= $brand->id; ?></td>
+                                 <td><?= $banner->id; ?></td>
                               </tr>
                               <tr>
-                                 <td>Tên loại sản phẩm</td>
-                                 <td><?= $brand->name; ?></td>
+                                 <td>Tên slider</td>
+                                 <td><?= $banner->name; ?></td>
                               </tr>
                               <tr>
-                                 <td>Slug</td>
-                                 <td><?= $brand->slug; ?></td>
+                                 <td>Liên kết</td>
+                                 <td><?= $banner->link; ?></td>
+                              </tr>
+                              <tr>
+                                 <td>Vị trí</td>
+                                 <td><?= $banner->position; ?></td>
                               </tr>
                               <tr>
                                  <td>Hình ảnh</td>
-                                 <td><img style="width :100px;" src="../public/images/brand/<?= $brand->image; ?>" 
-                                       alt="<?= $brand->image; ?>"></td>
+                                 <td><img style="width :100px;" src="../public/images/banner/<?= $banner->image; ?>" 
+                                       alt="<?= $banner->image; ?>"></td>
                               </tr>
                               <tr>
                                  <td>Thứ tự</td>
-                                 <td><?= $brand->sort_order; ?></td>
-                              </tr>
-                              <tr>
-                                 <td>Mô tả</td>
-                                 <td><?= $brand->description; ?></td>
-                              </tr>
+                                 <td><?= $banner->sort_order; ?></td>
+                              </tr>                  
                               <tr>
                                  <td>Ngày tạo</td>
-                                 <td><?= $brand->created_at; ?></td>
+                                 <td><?= $banner->created_at; ?></td>
                               </tr>
                               <tr>
                                  <td>Người tạo</td>
-                                 <td><?= $brand->created_by; ?></td>
+                                 <td><?= $banner->created_by; ?></td>
                               </tr>
                               <tr>
                                  <td>Ngày sửa</td>
-                                 <td><?= $brand->updated_at; ?></td>
+                                 <td><?= $banner->updated_at; ?></td>
                               </tr>
                               <tr>
                                  <td>Người sửa</td>
-                                 <td><?= $brand->updated_by; ?></td>
+                                 <td><?= $banner->updated_by; ?></td>
                               </tr>
                               <tr>
                                  <td>Trạng thái</td>
-                                 <td><?= $brand->status; ?></td>
+                                 <td><?= $banner->status; ?></td>
                               </tr>
                            </tbody>
                         </table>
