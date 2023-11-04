@@ -1,10 +1,16 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Topic;
+// $list = Post::where('status', '=', 0)
+//    ->orderBy('created_at', 'DESC')
+//    ->get();
 
-$list = Post::where('status', '=', 0)
-   ->orderBy('created_at', 'DESC')
+   $list = Post::join('topic', 'post.topic_id', '=', 'topic.id')
+   ->where('post.status', '=', 0)
+   ->select("post.*", "topic.name as topic_name")
    ->get();
+
 ?>
 <?php require_once "../views/backend/header.php"; ?>
 <!-- CONTENT -->
@@ -57,11 +63,11 @@ $list = Post::where('status', '=', 0)
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                    <img src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->image; ?>">
+                                    <img src="../public/images/post/<?= $item->image; ?>" alt="<?= $item->image; ?>" style="width: 130px;">
                                  </td>
                                  <td>
                                     <div class="name">
-                                       <?= $item->name; ?>
+                                       <?= $item->title; ?>
                                     </div>
                                     <div class="function_style">
                                        <a href="index.php?option=post&cat=retore&id=<?= $item->id; ?>" class="btn btn-info">

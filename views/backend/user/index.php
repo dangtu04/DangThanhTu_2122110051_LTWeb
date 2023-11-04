@@ -27,6 +27,7 @@ $list = User::where('status', '!=', 0)
                            <i class="fa fa-trash"></i> Thùng rác</a>
          </div>
          <div class="card-body">
+         <?php require_once "../views/backend/message.php"; ?>  
             <table class="table table-bordered" id="mytable">
                <thead>
                   <tr>
@@ -47,7 +48,7 @@ $list = User::where('status', '!=', 0)
                               <input type="checkbox">
                            </td>
                            <td>
-                              <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->image; ?>" style="width:130px;">
+                              <img src="../public/images/user/<?= $item->image; ?>" alt="<?= $item->image; ?>" style="width:130px;">
                            </td>
                            <td>
                               <div class="name">

@@ -43,7 +43,7 @@ if ($post == NULL) {
                   <div class="col-md-12">
                      <div class="mb-3">
                         <input type="hidden" name="id" value="<?= $post->id; ?>">
-                        <label>Tên thương hiệu (*)</label>
+                        <label>Tiêu đề bài viết (*)</label>
                         <input type="text" value="<?= $post->title; ?>" name="title" class="form-control">
                      </div>
                      <div class="mb-3">
@@ -57,6 +57,10 @@ if ($post == NULL) {
                      <div class="mb-3">
                         <label>Hình đại diện</label>
                         <input type="file" name="image" class="form-control">
+                     </div>
+                     <div class="mb-3">
+                        <label>Kiểu bài viết</label>
+                        <input type="text" name="type" class="form-control">
                      </div>
                      <div class="mb-3">
                         <label>Trạng thái</label>

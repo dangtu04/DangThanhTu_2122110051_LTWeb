@@ -1,8 +1,14 @@
 <?php 
 use App\Models\Product;
 
-$list = Product::where('status', '=', 0)
-   ->orderBy('created_at', 'DESC')
+// $list = Product::where('status', '=', 0)
+//    ->orderBy('created_at', 'DESC')
+//    ->get();
+
+$list = Product::join('category', 'product.category_id', '=', 'category.id')
+   ->join('brand', 'product.brand_id', '=', 'brand.id')
+   ->where('product.status', '=', 0)
+   ->select("product.*", "category.name as category_name", "brand.name as brand_name")
    ->get();
 ?>
 <?php require_once "../views/backend/header.php"; ?>
@@ -56,8 +62,8 @@ $list = Product::where('status', '=', 0)
                                     <input type="checkbox">
                                  </td>
                                  <td>
-                                 <img src="../public/images/<?= $item->image; ?>" 
-                                       alt="<?= $item->image; ?>">
+                                 <img src="../public/images/product/<?= $item->image; ?>" 
+                                       alt="<?= $item->image; ?>" style="width:130px;">
                                  </td>
                                  <td>
                                     <div class="name">

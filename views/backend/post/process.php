@@ -9,10 +9,10 @@ if (isset($_POST['THEM'])) {
     $post->title = $_POST['title'];
     $post->slug = (strlen($_POST['slug']) > 0) ? $_POST['slug'] : MyClass::str_slug($_POST['title']);
     $post->detail = $_POST['detail'];
-    $post->topic_id = $_POST['topic_id'];
+    // $post->topic_id = $_POST['topic_id'];
     $post->status = $_POST['status'];
     //Xử lí uploadfile
-    if (strlen($_FILES['image']['title']) > 0) {
+    if (strlen($_FILES['image']['name']) > 0) {
         $target_dir = "../public/images/post/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -24,7 +24,7 @@ if (isset($_POST['THEM'])) {
     }
     //tư sinh ra
     $post->created_at = date('Y-m-d-H:i:s');
-    $post->created_by = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 1;
+    $post->created_by = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 1;
     var_dump($post);
     //luu vao csdl
     // insert into post
@@ -49,15 +49,15 @@ if (isset($_POST['CAPNHAT'])) {
     $post->title = $_POST['title'];
     $post->slug = (strlen($_POST['slug']) > 0) ? $_POST['slug'] : MyClass::str_slug($_POST['title']);
     $post->detail = $_POST['detail'];
-    $post->topic_id = $_POST['topic_id'];
+    // $post->topic_id = $_POST['topic_id'];
     $post->status = $_POST['status'];
     //Xử lí uploadfile
-    if (strlen($_FILES['image']['title']) > 0) {
+    if (strlen($_FILES['image']['name']) > 0) {
         //Xóa hình cũ
 
         //Thêm hình mới
         $target_dir = "../public/images/post/";
-        $target_file = $target_dir . basename($_FILES["image"]["title"]);
+        $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $extension = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
             $filename = $post->slug . '.' . $extension;
@@ -67,7 +67,7 @@ if (isset($_POST['CAPNHAT'])) {
     }
     //tư sinh ra
     $post->updated_at = date('Y-m-d-H:i:s');
-    $post->updated_by = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : 1;
+    $post->updated_by = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 1;
     var_dump($post);
     //luu vao csdl
     //inset

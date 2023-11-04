@@ -60,6 +60,10 @@ $list = Post::where('status', '!=', 0)
                      <input type="file" name="image" class="form-control">
                   </div>
                   <div class="mb-3">
+                     <label>Kiểu bài viết</label>
+                     <input type="text" name="type" class="form-control">
+                  </div>
+                  <div class="mb-3">
                      <label>Trạng thái</label>
                      <select name="status" class="form-control">
                         <option value="1">Xuất bản</option>

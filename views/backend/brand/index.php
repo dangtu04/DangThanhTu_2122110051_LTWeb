@@ -87,7 +87,7 @@ $list = Brand::where('status', '!=', 0)
                                  </td>
                                  <td>
                                  <img src="../public/images/brand/<?= $item->image; ?>" 
-                                       alt="<?= $item->image; ?>">
+                                       alt="<?= $item->image; ?>" style="width:130px;">
                                  </td>
                                  <td>
                                     <div class="name">

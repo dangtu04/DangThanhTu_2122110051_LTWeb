@@ -11,9 +11,10 @@ if ($product == NULL)
 }
 
 ?>
+<?php require_once '../views/backend/header.php';?>
 <form action="index.php?option=product&cat=process" method="post"
 enctype="multipart/form-data">
-<?php require_once '../views/backend/header.php';?>
+
       <!-- CONTENT -->
       <div class="content-wrapper">
          <section class="content-header">

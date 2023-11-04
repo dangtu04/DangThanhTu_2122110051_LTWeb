@@ -55,7 +55,7 @@ if ($banner == NULL) {
                         <label>Vị trí (*)</label>
                         <select name="position" class="form-control">
                            <option value="">None</option>
-                           <option value="1">Tên danh mục</option>
+                           <option value="slideshow">Slide show</option>
                         </select>
                      </div>
                      <div class="mb-3">

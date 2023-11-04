@@ -1,11 +1,19 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Topic;
 
-$list = Post::where('status', '!=', 0)
-   ->orderBy('created_at', 'DESC')
+$list = Post::join('topic', 'post.topic_id', '=', 'topic.id')
+   ->where('post.status', '!=', 0)
+   ->select("post.*", "topic.name as topic_name")
    ->get();
-?><?php require_once "../views/backend/header.php"; ?>
+
+// $list = Post::where([['status', '!=', 0], ['type', '!=', 'page']])
+//    ->orderBy('created_at', 'DESC')
+//    ->get();
+  
+?>
+<?php require_once "../views/backend/header.php"; ?>
 <!-- CONTENT -->
 <div class="content-wrapper">
    <section class="content-header">
@@ -26,6 +34,7 @@ $list = Post::where('status', '!=', 0)
                <i class="fa fa-trash"></i> Thùng rác</a>
          </div>
          <div class="card-body p-2">
+            <?php require_once "../views/backend/message.php"; ?>
             <table class="table table-bordered">
                <thead>
                   <tr>
@@ -69,7 +78,7 @@ $list = Post::where('status', '!=', 0)
                               </div>
                            </td>
                            <td><?= $item->slug; ?></td>
-                           <td><?= $item->detail; ?></td>
+                           <td style="width:400px;"><?= $item->detail; ?></td>
                         </tr>
                      <?php endforeach; ?>
                   <?php endif; ?>

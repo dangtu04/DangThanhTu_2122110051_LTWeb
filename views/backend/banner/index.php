@@ -48,7 +48,7 @@ $list = Banner::where('status', '!=', 0)
                               <input type="checkbox">
                            </td>
                            <td>
-                              <img src="../public/images/<?= $item->image; ?>" alt="<?= $item->image; ?>">
+                              <img src="../public/images/banner/<?= $item->image; ?>" alt="<?= $item->image; ?>" style="width:130px;">
                            </td>
                            <td>
                               <div class="name">

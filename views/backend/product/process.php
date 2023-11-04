@@ -10,6 +10,8 @@ if(isset($_POST['THEM']))
     $product->name = $_POST['name'];
     $product->slug =(strlen($_POST['slug'])>0) ? $_POST['slug']: MyClass::str_slug($_POST['name']);
     $product->description = $_POST['description'];
+    $product->category_id = $_POST['category_id'];
+    $product->brand_id = $_POST['brand_id'];
     $product->status = $_POST['status'];
     //Xử lí uploadfile
     if(strlen($_FILES['image']['name'])>0){
@@ -36,9 +38,6 @@ if(isset($_POST['THEM']))
 }
 
 
-
-
-
 if(isset($_POST['CAPNHAT']))
 {
     $id=$_POST['id'];
@@ -52,6 +51,8 @@ if(isset($_POST['CAPNHAT']))
     $product->name = $_POST['name'];
     $product->slug =(strlen($_POST['slug'])>0) ? $_POST['slug']: MyClass::str_slug($_POST['name']);
     $product->description = $_POST['description'];
+    $product->category_id = $_POST['category_id'];
+    $product->brand_id = $_POST['brand_id'];
     $product->status = $_POST['status'];
     //Xử lí uploadfile
     if(strlen($_FILES['image']['name'])>0){

@@ -63,6 +63,14 @@ if ($user == NULL)
                            <input type="file" name="image" class="form-control">
                         </div>
                         <div class="mb-3">
+                           <label>Tên đăng nhập</label>
+                           <input type="text" name="username" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                           <label>Mật khẩu</label>
+                           <input type="password" name="password" class="form-control">
+                        </div>
+                        <div class="mb-3">
                            <label>Trạng thái</label>
                            <select name="status" class="form-control">
                               <option value="1" <?=($user->status==1)?'selected':'';?> >Xuất bản</option>

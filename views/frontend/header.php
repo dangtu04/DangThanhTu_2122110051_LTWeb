@@ -4,11 +4,12 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Trang chủ</title>
+   <title><?= $title??"No Title";?></title>
    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="public/fontawesome/css/all.min.css">
    <link rel="stylesheet" href="public/css/frontend.css">
    <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="public/jquery/jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
@@ -21,8 +22,8 @@
                   min-width:250px;
                   margin-top: 10px;">
                </a> -->
-               <a href="index.html">
-                  <img src="public/images/logo.webp" class="img-fluid" alt="Logo" style="margin-top: 10px;">
+               <a href="index.php" >
+                  <img src="public/images/maulogo-3.png" class="img-fluid" alt="Logo" style="margin-top: 1px; width:150px">
                </a>
             </div>
             <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3 mt-3">
@@ -59,10 +60,12 @@
                </div>
             </div>
             <div class="col-6 col-sm-6 col-md-1 text-end py-4 py-md-2 cart-block">
-               <a href="cart.html">
+               <a href="index.php?option=cart">
                   <div class="box-cart float-end">
                      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                     <span>1</span>
+                     <span id="showcart">
+                        <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']):0;?>
+                     </span>
                   </div>
                </a>
             </div>

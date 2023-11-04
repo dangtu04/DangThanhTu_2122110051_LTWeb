@@ -44,7 +44,7 @@ $list = Topic::where('status', '=', 0)
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên chủ đề</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>

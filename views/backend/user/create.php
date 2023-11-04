@@ -59,10 +59,6 @@ $list = User::where('status', '!=', 0)
                   </div>
                </div>
                <div class="col-md-6">
-                  <!-- <div class="mb-3">
-                     <label>Giá bán (*)</label>
-                     <input type="number" value="10000" min="10000" name="price" class="form-control">
-                  </div> -->
                   <div class="mb-3">
                      <label>Hình đại diện</label>
                      <input type="file" name="image" class="form-control">
