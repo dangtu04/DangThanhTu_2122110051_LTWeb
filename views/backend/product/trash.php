@@ -50,7 +50,7 @@ $list = Product::join('category', 'product.category_id', '=', 'category.id')
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên sản phẩm</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>

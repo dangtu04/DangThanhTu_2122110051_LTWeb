@@ -21,7 +21,8 @@
 
         use App\Models\User;
         $error = "";
-        if(isset($_POST['DANGNHAP'])) {
+        if(isset($_POST['DANGNHAP'])) 
+        {
             $username = $_POST['username'];
             $password = sha1($_POST['password']);
             $args = [

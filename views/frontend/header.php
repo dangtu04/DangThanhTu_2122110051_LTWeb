@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title><?= $title??"No Title";?></title>
+   <title><?= $title ?? "No Title"; ?></title>
    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="public/fontawesome/css/all.min.css">
    <link rel="stylesheet" href="public/css/frontend.css">
@@ -22,14 +22,13 @@
                   min-width:250px;
                   margin-top: 10px;">
                </a> -->
-               <a href="index.php" >
+               <a href="index.php">
                   <img src="public/images/maulogo-3.png" class="img-fluid" alt="Logo" style="margin-top: 1px; width:150px">
                </a>
             </div>
             <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3 mt-3">
                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm"
-                     aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm" aria-label="Recipient's username" aria-describedby="basic-addon2">
                   <span class="input-group-text bg-main " id="basic-addon2">
                      <i class="fa fa-search" aria-hidden="true"></i>
                   </span>
@@ -44,15 +43,22 @@
                            0343083117
                         </a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link nav-confirm" href="login.html">Đăng nhập</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link nav-confirm" href="register.html">Đăng ký</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Đặng Thanh Tú</a>
-                     </li>
+
+                     <?php if (isset($_SESSION['name'])) : ?>
+                        <li class="nav-item">                           
+                           <a class="nav-link" href="index.php?option=profile">Tên: <?php echo $_SESSION['name']; ?></a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link nav-confirm" href="index.php?option=customer&logout=true">Đăng xuất</a>
+                        </li>
+                     <?php else : ?>
+                        <li class="nav-item">
+                           <a class="nav-link nav-confirm" href="index.php?option=customer&login=true">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link nav-confirm" href="index.php?option=register">Đăng ký</a>
+                        </li>
+                     <?php endif; ?>
                   </ul>
                </div>
                <div class="fs-6 py-2">
@@ -64,7 +70,7 @@
                   <div class="box-cart float-end">
                      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                      <span id="showcart">
-                        <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']):0;?>
+                        <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>
                      </span>
                   </div>
                </a>
@@ -76,10 +82,10 @@
       <div class="container">
          <div class="row">
             <div class="col-12 d-none d-md-block col-md-2 d-none d-md-block">
-               <?php require_once 'views/frontend/mod-menu-listcategory.php';?>
+               <?php require_once 'views/frontend/mod-menu-listcategory.php'; ?>
             </div>
             <div class="col-12 col-md-9">
-            <?php require_once 'views/frontend/mod-mainmenu.php';?>
+               <?php require_once 'views/frontend/mod-mainmenu.php'; ?>
             </div>
          </div>
       </div>

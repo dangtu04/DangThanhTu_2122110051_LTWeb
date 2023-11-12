@@ -45,10 +45,12 @@ class Cart
         }
         $_SESSION['cart'] = $carts;
     }
+
     public static function cartContent()
     {
         return $_SESSION['cart'] ?? [];
     }
+
     public static function cartTotal()
     {
         $total = 0;
@@ -59,5 +61,35 @@ class Cart
             }
         }
         return $total;
+    }
+
+    public static function updateCart($id, $qty)
+    {
+        $carts = $_SESSION['cart'] ?? [];
+        if (count($carts) > 0) {
+            foreach ($carts as $pos => $item) {
+                if ($item['id'] == $id) {
+                    if ($qty == 0) {
+                        unset($carts[$pos]);
+                    } else {
+                        $carts[$pos]['qty'] = $qty;
+                    }
+                }
+            }
+        }
+        $_SESSION['cart'] = $carts;
+    }
+
+    public static function deleteCart($id)
+    {
+        $carts = $_SESSION['cart'] ?? [];
+        if (count($carts) > 0) {
+            foreach ($carts as $pos => $item) {
+                if ($item['id'] == $id) {
+                    unset($carts[$pos]);
+                }
+            }
+        }
+        $_SESSION['cart'] = $carts;
     }
 }

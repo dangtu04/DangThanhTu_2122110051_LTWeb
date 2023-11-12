@@ -99,10 +99,10 @@ $list_other = Product::where([['status', '=', 1], ['id', '!=', $pro->id]])
             </div>
             <div class="mb-3">
                <label for="">Số lượng</label>
-               <input type="number" value="1" name="qty" id="qty" class="form-control" style="width:200px">
+               <input type="number" min="0" value="1" name="qty" id="qty" class="form-control" style="width:200px">
             </div>
             <div class="mb-3">
-               <a class="btn btn-main" href="checkout.html">Mua ngay</a>
+               <a class="btn btn-main" href="index.php?option=checkout">Mua ngay</a>
 
                <button class="btn btn-main" onclick="addcart(<?= $pro->id; ?>)">
                   <i class="fa-solid fa-bag-shopping" aria-hidden="true">

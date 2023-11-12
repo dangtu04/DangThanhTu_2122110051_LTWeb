@@ -1,9 +1,9 @@
 <?php
-use App\Models\Post;
-$slug = $_REQUEST['cat'];
-$page = Post::where([['slug', '=', $slug],['type', '=', 'page'],['status', '=', 1]])->first();
 
-;?>
+use App\Models\Post;
+
+$slug = $_REQUEST['cat'];
+$page = Post::where([['slug', '=', $slug], ['type', '=', 'page'], ['status', '=', 1]])->first();; ?>
 
 
 <?php require_once 'views/frontend/header.php'; ?>
@@ -42,8 +42,8 @@ $page = Post::where([['slug', '=', $slug],['type', '=', 'page'],['status', '=', 
             </ul>
          </div>
          <div class="col-md-9 order-1 order-md-2">
-            <h1 class="fs-2 text-main"><?= $page->title;?></h1>
-            <p><?= $page->detail;?></p>
+            <h1 class="fs-2 text-main"><?= $page->title; ?></h1>
+            <p><?= $page->detail; ?></p>
          </div>
       </div>
    </div>

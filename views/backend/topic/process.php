@@ -12,7 +12,7 @@ if(isset($_POST['THEM']))
     $topic->status = $_POST['status'];
     //Xử lí uploadfile
     //tư sinh ra
-    $topic->created_at = date('Y-m-d-H:i:s');
+    $topic->created_at = date('Y-m-d H:i:s');
     $topic->created_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($topic);
     //luu vao csdl
@@ -42,7 +42,7 @@ if(isset($_POST['CAPNHAT']))
     $topic->status = $_POST['status'];
     //Xử lí uploadfile
     //tư sinh ra
-    $topic->updated_at = date('Y-m-d-H:i:s');
+    $topic->updated_at = date('Y-m-d H:i:s');
     $topic->updated_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($topic);
     //luu vao csdl

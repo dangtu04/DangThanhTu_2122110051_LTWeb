@@ -26,7 +26,7 @@ if(isset($_POST['THEM']))
         }
     }
     //tư sinh ra
-    $product->created_at = date('Y-m-d-H:i:s');
+    $product->created_at = date('Y-m-d H:i:s');
     $product->created_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($product);
     //luu vao csdl
@@ -70,7 +70,7 @@ if(isset($_POST['CAPNHAT']))
         }
     }
     //tư sinh ra
-    $product->updated_at = date('Y-m-d-H:i:s');
+    $product->updated_at = date('Y-m-d H:i:s');
     $product->updated_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($product);
     //luu vao csdl

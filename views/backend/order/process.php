@@ -15,7 +15,7 @@ if (isset($_POST['THEM'])) {
     // $order->gender = $_POST['gender'];
     $order->status = $_POST['status'];
    
-    $order->updated_at = date('Y-m-d-H:i:s');
+    $order->updated_at = date('Y-m-d H:i:s');
     $order->updated_by = (isset($_SESSION['order_id'])) ? $_SESSION['order_id'] : 1;
     var_dump($order);
     $order->save();
@@ -36,7 +36,7 @@ if (isset($_POST['CAPNHAT'])) {
     // $order->gender = $_POST['gender'];
     $order->status = $_POST['status'];
    
-    $order->updated_at = date('Y-m-d-H:i:s');
+    $order->updated_at = date('Y-m-d H:i:s');
     $order->updated_by = (isset($_SESSION['order_id'])) ? $_SESSION['order_id'] : 1;
     var_dump($order);
     //luu vao csdl

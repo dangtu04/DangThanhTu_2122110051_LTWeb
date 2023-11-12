@@ -23,9 +23,9 @@ if (isset($_POST['THEM'])) {
         }
     }
     //tư sinh ra
-    $post->created_at = date('Y-m-d-H:i:s');
+    $post->created_at = date('Y-m-d H:i:s');
     $post->created_by = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 1;
-    var_dump($post);
+    // var_dump($post);
     //luu vao csdl
     // insert into post
     $post->save();
@@ -66,9 +66,9 @@ if (isset($_POST['CAPNHAT'])) {
         }
     }
     //tư sinh ra
-    $post->updated_at = date('Y-m-d-H:i:s');
+    $post->updated_at = date('Y-m-d H:i:s');
     $post->updated_by = (isset($_SESSION['topic_id'])) ? $_SESSION['topic_id'] : 1;
-    var_dump($post);
+    // var_dump($post);
     //luu vao csdl
     //inset
     $post->save();

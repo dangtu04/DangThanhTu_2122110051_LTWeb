@@ -5,7 +5,8 @@ use App\Models\Post;
 $list = Post::where([['status', '!=', 0], ['type', '!=', 'post']])
    ->orderBy('created_at', 'DESC')
    ->get();
-?><?php require_once "../views/backend/header.php"; ?>
+?>
+<?php require_once "../views/backend/header.php"; ?>
 <!-- CONTENT -->
 <div class="content-wrapper">
    <section class="content-header">

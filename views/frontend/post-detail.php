@@ -1,11 +1,9 @@
 <?php
 use App\Models\Post;
-$slug = $_REQUEST['slug'];
-$page = Post::where([['slug', '=', $slug],['type', '=', 'post'],['status', '=', 1]])->first();
-
+// $slug = $_REQUEST['slug'];
+// $page = Post::where([['slug', '=', $slug],['type', '=', 'post'],['status', '=', 1]])->first();
+$page = Post::where([['type', '=', 'post'],['status', '=', 1]])->first();
 ;?>
-
-
 <?php require_once 'views/frontend/header.php'; ?>
 <section class="bg-light">
    <div class="container">

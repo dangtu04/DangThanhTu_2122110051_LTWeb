@@ -36,6 +36,7 @@ $list = User::where('status', '!=', 0)
                      </th>
                      <th class="text-center" style="width:130px;">Hình ảnh</th>
                      <th>Họ tên</th>
+                     <th>Tên người dùng</th>
                      <th>Điện thoại</th>
                      <th>Email</th>
                   </tr>
@@ -70,6 +71,7 @@ $list = User::where('status', '!=', 0)
                                     <i class="fas fa-trash"></i> Xoá</a>
                               </div>
                            </td>
+                           <td><?= $item->username; ?></td>
                            <td><?= $item->phone; ?></td>
                            <td><?= $item->email; ?></td>
                         </tr>

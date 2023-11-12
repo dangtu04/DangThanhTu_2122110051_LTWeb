@@ -25,7 +25,7 @@ if(isset($_POST['THEM']))
         }
     }
     //tư sinh ra
-    $banner->created_at = date('Y-m-d-H:i:s');
+    $banner->created_at = date('Y-m-d H:i:s');
     $banner->created_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($banner);
     //luu vao csdl
@@ -35,8 +35,6 @@ if(isset($_POST['THEM']))
     MyClass::set_flash('message',['msg' =>'Thêm thành công', 'type' => 'success']);
     header("location:index.php?option=banner");
 }
-
-
 
 
 
@@ -71,7 +69,7 @@ if(isset($_POST['CAPNHAT']))
         }
     }
     //tư sinh ra
-    $banner->updated_at = date('Y-m-d-H:i:s');
+    $banner->updated_at = date('Y-m-d H:i:s');
     $banner->updated_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($banner);
     //luu vao csdl

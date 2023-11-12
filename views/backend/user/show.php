@@ -17,7 +17,7 @@ if ($user == null)
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-12">
-                     <h1 class="d-inline">Chi tiết thương hiệu</h1>
+                     <h1 class="d-inline">Chi tiết thành viên</h1>
                   </div>
                </div>
             </div>
@@ -60,7 +60,7 @@ if ($user == null)
                               </tr>
                               <tr>
                                  <td>Mật khẩu</td>
-                                 <td><?= $user->pasword; ?></td>
+                                 <td><?= $user->password; ?></td>
                               </tr>
                               <tr>
                                  <td>Email</td>

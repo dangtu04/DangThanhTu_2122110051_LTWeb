@@ -44,7 +44,7 @@ $list = Category::where('status', '=', 0)
                                     <input type="checkbox">
                                  </th>
                                  <th class="text-center" style="width:130px;">Hình ảnh</th>
-                                 <th>Tên thương hiệu</th>
+                                 <th>Tên danh mục</th>
                                  <th>Tên slug</th>
                               </tr>
                            </thead>

@@ -27,7 +27,7 @@ if(isset($_POST['THEM']))
     //     }
     // }
     //tư sinh ra
-    $contact->created_at = date('Y-m-d-H:i:s');
+    $contact->created_at = date('Y-m-d H:i:s');
     // $contact->created_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($contact);
     //luu vao csdl
@@ -75,7 +75,7 @@ if(isset($_POST['CAPNHAT']))
     //     }
     // }
     //tư sinh ra
-    $contact->updated_at = date('Y-m-d-H:i:s');
+    $contact->updated_at = date('Y-m-d H:i:s');
     $contact->updated_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($contact);
     //luu vao csdl

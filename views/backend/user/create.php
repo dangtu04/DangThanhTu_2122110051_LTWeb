@@ -5,6 +5,7 @@ $list = User::where('status', '!=', 0)
    ->orderBy('created_at', 'DESC')
    ->get();
 ?>
+
 <?php require_once "../views/backend/header.php"; ?>
 <!-- CONTENT -->
 <form action="index.php?option=user&cat=process" method="post" enctype="multipart/form-data">
@@ -42,6 +43,13 @@ $list = User::where('status', '!=', 0)
                      <input type="text" name="phone" class="form-control">
                   </div>
                   <div class="mb-3">
+                     <label>Giới tính </label>
+                     <select name="gender" class="form-control">
+                        <option value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                     </select>
+                  </div>
+                  <div class="mb-3">
                      <label>Email</label>
                      <input type="text" name="email" class="form-control">
                   </div>
@@ -50,12 +58,12 @@ $list = User::where('status', '!=', 0)
                      <input type="text" name="username" class="form-control">
                   </div>
                   <div class="mb-3">
-                     <label>Mật khẩu</label>
-                     <input type="password" name="password" class="form-control">
+                  <label>Mật khẩu</label>
+                        <input type="password" name="password" id="password" class="form-control">
                   </div>
                   <div class="mb-3">
-                     <label>Xác nhận mật khẩu</label>
-                     <input type="password" name="password_re" class="form-control">
+                  <label>Nhập lại mật khẩu</label>
+                        <input type="password" name="password" id="password" class="form-control">
                   </div>
                </div>
                <div class="col-md-6">
@@ -69,6 +77,11 @@ $list = User::where('status', '!=', 0)
                         <option value="1">Xuất bản</option>
                         <option value="2">Chưa xuất bản</option>
                      </select>
+                  </div>
+                  <div class="mb-3">
+                     <label>Địa chỉ</label>
+                     <!-- <input type="text" name="address" class="form-control"> -->
+                     <textarea name="address" id="" cols="30" rows="10" class="form-control"></textarea>
                   </div>
                </div>
             </div>

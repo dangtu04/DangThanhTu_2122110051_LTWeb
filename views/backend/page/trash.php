@@ -47,7 +47,7 @@ $list = Post::join('topic', 'post.topic_id', '=', 'topic.id')
                               <input type="checkbox">
                            </th>
                            <th class="text-center" style="width:130px;">Hình ảnh</th>
-                           <th>Tên thương hiệu</th>
+                           <th>Tên trang</th>
                            <th>Tên slug</th>
                         </tr>
                      </thead>

@@ -58,10 +58,10 @@ if ($post == NULL) {
                         <label>Hình đại diện</label>
                         <input type="file" name="image" class="form-control">
                      </div>
-                     <div class="mb-3">
+                     <!-- <div class="mb-3">
                         <label>Kiểu bài viết</label>
                         <input type="text" name="type" class="form-control">
-                     </div>
+                     </div> -->
                      <div class="mb-3">
                         <label>Trạng thái</label>
                         <select name="status" class="form-control">

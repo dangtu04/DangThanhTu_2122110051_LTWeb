@@ -24,7 +24,7 @@ if(isset($_POST['THEM']))
         }
     }
     //tư sinh ra
-    $category->created_at = date('Y-m-d-H:i:s');
+    $category->created_at = date('Y-m-d H:i:s');
     $category->created_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($category);
     //luu vao csdl
@@ -69,7 +69,7 @@ if(isset($_POST['CAPNHAT']))
         }
     }
     //tư sinh ra
-    $category->updated_at = date('Y-m-d-H:i:s');
+    $category->updated_at = date('Y-m-d H:i:s');
     $category->updated_by = (isset($_SESSION['user_id']))? $_SESSION['user_id'] : 1;
     var_dump($category);
     //luu vao csdl
