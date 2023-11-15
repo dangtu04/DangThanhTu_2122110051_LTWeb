@@ -3,12 +3,13 @@
 use App\Models\User;
 
 $customer = User::where([['status', '=', 1], ['id', '=', $_SESSION['user_id']]])->first();
-if (isset($_POST['CHANEGPASSWORD'])) {
+if (isset($_POST['CHANEGADDRESS'])) {
    $id = $customer->id;
    $user = User::find($id);
-   $user->password = sha1($_POST['password']);
+   $user->address = $_POST['address'];
    $user->save();
    header('location:index.php?option=profile');
+ 
 }
 
 
@@ -17,15 +18,15 @@ if (isset($_POST['CHANEGPASSWORD'])) {
 
 ?>
 <?php require_once "views/frontend/header.php"; ?>
-<form action="index.php?option=changepassword" method="post" name="logincustomer">
+<form action="index.php?option=changeaddress" method="post" name="logincustomer">
    <section class="bg-light">
       <div class="container">
          <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb py-2 my-0">
                <li class="breadcrumb-item">
-                  <a class="text-main" href="index.html">Trang chủ</a>
+                  <a class="text-main" href="index.php">Trang chủ</a>
                </li>
-               <li class="breadcrumb-item active" aria-current="page">Đổi mật khẩu</li>
+               <li class="breadcrumb-item active" aria-current="page">Đổi địa chỉ</li>
             </ol>
          </nav>
       </div>
@@ -42,40 +43,33 @@ if (isset($_POST['CHANEGPASSWORD'])) {
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="profile.html"><?= $customer->name; ?></a>
+                     <a class="nav-link" href="index.php?option=profile"><?= $customer->name; ?></a>
                   </li>
                </ul>
             </div>
             <div class="col-md-9 order-1 order-md-2">
-               <h1 class="fs-2 text-main">Thay đổi thông tin tài khoản</h1>
+               <h1 class="fs-2 text-main">Thay đổi địa chỉ </h1>
                <table class="table table-borderless">
                   <tr>
-                     <td style="width:20%;">Mật khẩu cũ</td>
+                     <td>Địa chỉ cũ</td>
                      <td>
-                        <input type="password" name="password_old" class="form-control" />
+                        <input type="text" name="address" value="<?= $customer->address; ?>" class="form-control" />
                      </td>
                   </tr>
                   <tr>
-                     <td>Mật khẩu</td>
+                     <td>Địa chỉ mới</td>
                      <td>
-                        <input type="password" name="password" class="form-control" />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>Xác nhận mật khẩu</td>
-                     <td>
-                        <input type="password" name="password_re" class="form-control" />
+                        <input type="text" name="address" class="form-control" />
                      </td>
                   </tr>
                   <tr>
                      <td>Xác nhận thao tác thực hiện </td>
                      <td>
-                        <button class="btn btn-main" type="submit" name="CHANEGPASSWORD">
-                           Đổi mật khẩu
+                        <button class="btn btn-main" type="submit" name="CHANEGADDRESS">
+                           Đổi Địa chỉ 
                         </button>
                      </td>
                   </tr>
-
                </table>
             </div>
          </div>

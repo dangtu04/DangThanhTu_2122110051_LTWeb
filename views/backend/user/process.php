@@ -8,7 +8,7 @@ if (isset($_POST['THEM'])) {
     //lấy từ form
     $user->name = $_POST['name'];
     $user->username = $_POST['username'];
-    $user->password = $_POST['password'];
+    $user->password = sha1($_POST['password']);
     $user->email = $_POST['email'];
     $user->phone = $_POST['phone'];
     $user->address = (strlen($_POST['address']) > 0) ? $_POST['address'] : MyClass::str_slug($_POST['name']);
@@ -52,7 +52,7 @@ if (isset($_POST['CAPNHAT'])) {
     //lấy từ form
     $user->name = $_POST['name'];
     $user->username = $_POST['username'];
-    $user->password = $_POST['password'];
+    $user->password = sha1($_POST['password']);
     $user->email = $_POST['email'];
     $user->phone = $_POST['phone'];
     $user->address = (strlen($_POST['address']) > 0) ? $_POST['address'] : MyClass::str_slug($_POST['name']);

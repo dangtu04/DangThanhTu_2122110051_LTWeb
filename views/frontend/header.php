@@ -23,7 +23,7 @@
                   margin-top: 10px;">
                </a> -->
                <a href="index.php">
-                  <img src="public/images/maulogo-3.png" class="img-fluid" alt="Logo" style="margin-top: 1px; width:150px">
+                  <img src="public/images/logo-new.png" class="img-fluid" alt="Logo" style="margin-top: 3px;">
                </a>
             </div>
             <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3 mt-3">

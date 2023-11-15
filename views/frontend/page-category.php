@@ -25,19 +25,19 @@ $page = Post::where([['slug', '=', $slug], ['type', '=', 'page'], ['status', '='
    <div class="container">
       <div class="row">
          <div class="col-md-3 order-2 order-md-1">
-            <ul class="list-group mb-3 list-page">
+         <ul class="list-group mb-3 list-page">
                <li class="list-group-item bg-main py-3">Các trang khác</li>
                <li class="list-group-item">
-                  <a href="post_page.html">Chính sách mua hàng</a>
+                  <a href="index.php?option=page&cat=chinh-sach-mua-hang">Chính sách mua hàng</a>
                </li>
                <li class="list-group-item">
-                  <a href="post_page.html">Chính sách vận chuyển</a>
+                  <a href="index.php?option=page&cat=chinh-sach-van-chuyen">Chính sách vận chuyển</a>
                </li>
                <li class="list-group-item">
-                  <a href="post_page.html">Chính sách đổi trả</a>
+                  <a href="index.php?option=page&cat=chinh-sach-doi-tra">Chính sách đổi trả</a>
                </li>
                <li class="list-group-item">
-                  <a href="post_page.html">Chính sách bảo hành</a>
+                  <a href="index.php?option=page&cat=chinh-sach-bao-hanh">Chính sách bảo hành</a>
                </li>
             </ul>
          </div>

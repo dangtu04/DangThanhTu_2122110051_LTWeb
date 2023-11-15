@@ -88,9 +88,9 @@ $user = User::where([['status', '=', 1], ['id', '=', $_SESSION['user_id']]])
       <div class="col-md-3 order-md-1">
          <ul class="list-group mb-3 list-category">
             <li class="list-group-item bg-main py-3">Thông tin tài khoản</li>
-            <li class="list-group-item">
+            <!-- <li class="list-group-item">
                <a href="profile.html">Thông tin tài khoản</a>
-            </li>
+            </li> -->
             <li class="list-group-item">
                <a href="profile.html">Quản lý đơn hàng</a>
             </li>
@@ -120,7 +120,7 @@ $user = User::where([['status', '=', 1], ['id', '=', $_SESSION['user_id']]])
                </tr>
                <tr>
                   <td style="width:30%;">Địa chỉ</td>
-                  <td><?= $user->address; ?> <a href="index.php?option=profile-edit">Đổi địa chỉ</a> </td>
+                  <td><?= $user->address; ?> <a href="index.php?option=changeaddress">Đổi địa chỉ</a> </td>
                </tr>
 
             </table>
