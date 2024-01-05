@@ -13,3 +13,7 @@ if(isset($_REQUEST['logout']))
     unset($_SESSION['name']);
     header('location:index.php');
 }
+
+if (isset($_REQUEST['search'])) {
+    require_once "views/frontend/customer-search.php";
+}

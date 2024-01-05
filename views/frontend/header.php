@@ -26,14 +26,30 @@
                   <img src="public/images/logo-new.png" class="img-fluid" alt="Logo" style="margin-top: 3px;">
                </a>
             </div>
-            <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3 mt-3">
+
+            <!-- Search -->
+
+            <!-- <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3 mt-3">
+               <form action="">
                <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm" aria-label="Recipient's username" aria-describedby="basic-addon2">
                   <span class="input-group-text bg-main " id="basic-addon2">
                      <i class="fa fa-search" aria-hidden="true"></i>
                   </span>
                </div>
+               </form>
+            </div> -->
+        
+
+            <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3">
+               <div class="input-group mb-3">
+                  <form method="post" action="index.php?option=customer&search=true" name="search">
+                     <input name="search" type="text" style=" width:450px;height:40px;" placeholder="Nhập sản phẩm cần tìm" class="btn btn-light text text-primary" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                     <button style="height:40px;" class="btn bg-main" type="submit" name="TIM"><i class="fa fa-search" aria-hidden="true"></i></button>
+                  </form>
+               </div>
             </div>
+            <!-- -------------------- -->
             <div class="col-12 col-sm-12 d-none d-md-block col-md-4 text-center py-2">
                <div class="call-login--register border-bottom">
                   <ul class="nav nav-fills py-0 my-0">
@@ -45,7 +61,7 @@
                      </li>
 
                      <?php if (isset($_SESSION['name'])) : ?>
-                        <li class="nav-item">                           
+                        <li class="nav-item">
                            <a class="nav-link" href="index.php?option=profile">Tên: <?php echo $_SESSION['name']; ?></a>
                         </li>
                         <li class="nav-item">

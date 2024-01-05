@@ -8,7 +8,7 @@
                   mong muốn đem đến chất lượng tốt nhất cho khách hàng.
                </p>
                <p class="pt-1">
-                  Địa chỉ: B216A, KP Bình Phước, Phường Bình Nhâm, TP. Thuận An, Bình Dương
+                  Địa chỉ: 103 Tăng Nhơn Phú, Phước Long B, Quận 9, Thành phố Hồ Chí Minh
                </p>
                <p class="pt-1">
                   Điện thoại: 03853 38 474(call, zalo) - Email: dtu.22034@gmail.com
